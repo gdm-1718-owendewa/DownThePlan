@@ -80,4 +80,4 @@ or make a new user the admin and delete this one.
 After you've done this you can and start the app by going into the main file in your terminal or other CLI-tool and run the command 
 php artisan serve this will start up a server on the given host based on your .env file.
 
-After that you can open a new terminal and use this project to start your own.
+After that you can open a new terminal and use this project to start your own aplication.
