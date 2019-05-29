@@ -346,6 +346,20 @@ body{
 #listDiv{
   min-height:400px;
 }
+#adminHome{
+  min-height:410px;
+}
+#adminHome h1{
+  margin-top:5%;
+  margin-bottom:1%;
+}
+.adminUsersTitle{
+  margin-top:15%;
+
+}
+#userCMSDiv{
+  min-height:360px;
+}
 @media only screen and (max-width: 1475px) {
   .buttons{
     position:absolute;
@@ -420,10 +434,11 @@ body{
   }
 }
 @media only screen and (max-width: 767px) {
-  #createDiv, #editDiv, #editProfile, #profileDiv, #policyDiv, #aboutDiv, #listDiv{
+  #createDiv, #editDiv, #editProfile, #profileDiv, #policyDiv, #aboutDiv, #listDiv,#adminHome{
     margin-top:85%;
     margin-left:5%;
   }
+  
   #detailBox{
     margin-top:90%;
 

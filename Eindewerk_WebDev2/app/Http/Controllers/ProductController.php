@@ -54,8 +54,10 @@ class ProductController extends Controller
     public function editProduct($product_id){
         if (Auth::user()){
             $product = Product::findOrFail($product_id);
+            $funded = Fundings::all()->where('product_id', $product_id)->sum('amount');
+
             $categories = Category::all();
-            return view('products/edit')->with(compact('categories','product'));
+            return view('products/edit')->with(compact('categories','product','funded'));
         }
         else{
             return redirect('/')->with('fail','U bent niet ingelogd!');
@@ -275,9 +277,11 @@ class ProductController extends Controller
         }
         public function deleteImage($image_id){
             $image = Image::where('id', $image_id)->first();
-            $file= $image->filepath;
-            if (Storage::exists($file)) {
-                Storage::delete($image->filename);
+            $file= str_replace('storage/', '', $image->filepath) . '/' . $image->filename;
+            // var_dump($file);
+            // dd(Storage::disk('public')->exists($file));
+            if (Storage::disk('public')->exists($file)) {
+                Storage::disk('public')->delete($file);
             }
             $image->delete();
             return redirect()->back();

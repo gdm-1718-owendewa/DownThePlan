@@ -18,6 +18,11 @@
       <li class="nav-item">
         <a class="nav-link text-dark " href="{{url('/credits') }}">Store</a>
       </li>
+      @if(Auth::user()->admin =='admin')
+      <li class="nav-item">
+        <a class="nav-link text-dark " href="{{route('adminHome') }}">AdminHome</a>
+      </li>
+      @endif
       </ul>
     </div>
     <div class="mx-auto order-0">
@@ -37,7 +42,9 @@
         </li>
         </ul>
     </div>
+    
 </nav>
+
 @else
 
 <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top">

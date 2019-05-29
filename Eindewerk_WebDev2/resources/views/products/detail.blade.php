@@ -16,6 +16,10 @@
     <div class="row">
         <div class="col">
             <div class="medium-8 large-8 columns">
+                @if(Auth::user()->admin == "admin")
+                <a class="btn btn-primary mb-3  create" href="{{route('adminFundingsCreate', $product->id)}}">Fund!</a>
+
+                @endif
                 <h1 class="mt-5">{!! $product->naam !!}</h1>
                 <p>{!! $product->deadline !!}</p>
                 <p class='w-75 pb-5 mt-5'>{!! $product->content !!}</p>

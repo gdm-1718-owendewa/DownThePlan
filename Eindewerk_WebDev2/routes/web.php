@@ -67,6 +67,32 @@ Route::get('/article/{article_id}/delete', 'ArticleController@deleteArticle')->n
 Route::get('/article/new/create', 'ArticleController@createArticle')->name('createArticle');
 Route::post('/article/new/create/save', 'ArticleController@saveArticle')->name('articleSave');
 
+//Admin routes
+Route::get('/admin', 'AdminController@getIndex')->name('adminHome');
+//admin Categorie routes
+Route::get('/admin/categories', 'AdminController@getCategories')->name('adminCategories');
+Route::get('/admin/categories/create', 'AdminController@createCategorie')->name('adminCategorieCreate');
+Route::post('/admin/categories/save', 'AdminController@categorieSave')->name('categorieSave');
+Route::get('/admin/categories/edit/{categorie_id}', 'AdminController@editCategorie')->name('adminCategorieEdit');
+Route::patch('/admin/categories/update/{categorie_id}', 'AdminController@updateCategorie')->name('adminCategorieUpdate');
+Route::get('/admin/categories/delete/{categorie_id}', 'AdminController@deleteCategorie')->name('adminCategorieDelete');
+//admin users routes
+Route::get('/admin/users', 'AdminController@getUsers')->name('adminUsers');
+Route::get('/admin/users/edit/{user_id}', 'AdminController@editUsers')->name('adminUsersEdit');
+Route::patch('/admin/users/update/{user_id}', 'AdminController@updateUsers')->name('adminUsersUpdate');
+Route::get('/admin/users/delete/{user_id}', 'AdminController@deleteUsers')->name('adminUsersDelete');
+//admin articles route
+Route::get('/admin/articles', 'AdminController@getArticles')->name('adminArticles');
+
+//admin fundings route
+Route::get('/admin/fundings', 'AdminController@getFundings')->name('adminFundings');
+Route::get('/admin/fundings/delete/{funding_id}', 'AdminController@deleteFundings')->name('adminFundingsDelete');
+Route::get('/admin/fundings/create/{project_id}', 'AdminController@createFundings')->name('adminFundingsCreate');
+Route::post('/admin/fundings/save', 'AdminController@fundingsSave')->name('fundingsSave');
+
+
+
+
 
 
 //Authentication routes

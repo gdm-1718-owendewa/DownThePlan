@@ -48,10 +48,10 @@
             door {{$article->user_name}}
             </h3>
             <p>{{$article->intro}}</p>
-            <a href="{{route('articleDetail', $article->id)}}">Lees meer</a>
+            <a class="btn btn-primary" href="{{route('articleDetail', $article->id)}}">Lees meer</a>
             @if(Auth::check() && Auth::user()->admin == 'admin')
-                <a href="{{route('editArticle', $article->id)}}">Edit</a>
-                <a href="{{route('deleteArticle', $article->id)}}">Delete</a>
+                <a class="btn btn-warning text-white" href="{{route('editArticle', $article->id)}}">Edit</a>
+                <a class="btn btn-danger text-white" href="{{route('deleteArticle', $article->id)}}">Delete</a>
             @endif
         </div>
         @endforeach

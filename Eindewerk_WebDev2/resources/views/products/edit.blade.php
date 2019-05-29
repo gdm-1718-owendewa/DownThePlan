@@ -43,6 +43,7 @@
             <input name="deadline" type="date" class="form-control col-sm-6" value="{{$product->deadline }}">
             <br>
             <br>
+    
           
           
           <input value="Edit" class="btn btn-primary mb-2 col-sm-6" type="submit">

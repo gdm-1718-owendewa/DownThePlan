@@ -2,6 +2,7 @@
 @section('content')
     @if(Auth::user())
     <a class="btn btn-primary mb-3  create" href="{{route('createproducts')}}">Create new product!</a>
+
     @endif
     <div class="productsBox row">
     @if (session('fail'))
